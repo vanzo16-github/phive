@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Meow+Script&family=Special+Gothic+Expanded+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box-video">
+            <video class="video" loop autoplay muted>
+                <source src="/vid.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="text">
+            <div class="letter">
+                <div class="cube P">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube H">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube I">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube V">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube E">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube c">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube l">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube u">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube b">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+            <div class="letter">
+                <div class="cube s">
+                    <div class="front"></div>
+                    <div class="top"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Функция для сброса и запуска анимации
+    function restartAnimation() {
+        // Сначала удаляем классы анимации
+        document.querySelectorAll('.cube').forEach(cube => {
+            cube.classList.remove('P', 'H', 'I', 'V', 'E', 'c', 'l', 'u', 'b', 's');
+        });
+
+        // Принудительный reflow (пересчет layout)
+        void document.querySelector('.container').offsetWidth;
+
+        // Добавляем классы анимации снова
+        const cubes = document.querySelectorAll('.cube');
+        cubes[0].classList.add('P');
+        cubes[1].classList.add('H');
+        cubes[2].classList.add('I');
+        cubes[3].classList.add('V');
+        cubes[4].classList.add('E');
+        cubes[5].classList.add('c');
+        cubes[6].classList.add('l');
+        cubes[7].classList.add('u');
+        cubes[8].classList.add('b');
+        cubes[9].classList.add('s');
+    }
+
+    // Запускаем анимацию в первый раз
+    restartAnimation();
+
+    // Устанавливаем интервал для повторения анимации каждые 4.3 секунды
+    // (1.3s длительность анимации + 3s задержка)
+    setInterval(restartAnimation, 4300);
+</script>
+
+</html>
